@@ -15,9 +15,12 @@
         npx tailwindcss init
         configure tailwind
     add tailwind directives to css(index)
+# Netflix gpt 
+ header > with logo
+ login > background and form
+ sign up > same page with state variable
 
-
-#features
+# features
 login/signup page
 signup form
 

@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+  
+    extend: {
+      colors: {
+        netflix_red:"#C11119",
+        netflix_bg:"#000000"
+       },
+    },
   },
   plugins: [],
 }
