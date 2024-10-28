@@ -9,3 +9,12 @@ export const API_OPTION = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNjk5YjJiNzJiYzdmOTlkMzdkOTIwMDg5YTRiZjYxMyIsIm5iZiI6MTcyOTU5OTI4NC4wODM3OTcsInN1YiI6IjY3MTc2MWJhNTBhNmViMGJmYmMyN2RkZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GiPwvlmnDc6C1onYs6Btt6PcqPFCXe7kOWAFUW2lTsE'
     }
   };
+
+  export const MOVIE_CARD_CDN_URL = "https://image.tmdb.org/t/p/w500"
+
+  export const SUPPORTED_LANGUAGES = [
+    {id:"en",name:"English"},
+    {id:"hindi",name:"Hindi"},
+    {id:"malayalam",name:"Malayalam"},
+    {id:"spanish",name:"Spanish"}
+  ]

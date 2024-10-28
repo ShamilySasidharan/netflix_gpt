@@ -25,8 +25,8 @@ const Login = () => {
     //  checkForValidation()
     // useref gives the value as object in the name of 'current' which is an object, inside that there is 'value' it  will give the values for the required field
     // console.log(fullname.current.value)
-    console.log(email.current.value);
-    console.log(password.current.value);
+    // console.log(email.current.value);
+    // console.log(password.current.value);
     const message = checkForValidation(
       email.current.value,
       password.current.value
@@ -61,7 +61,7 @@ const Login = () => {
             setErrorMsg(errorCode + " " + errorMessage);
           });
           
-          console.log(user);
+          // console.log(user);
        
           // ...
         })

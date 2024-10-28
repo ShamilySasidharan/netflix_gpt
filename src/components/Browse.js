@@ -1,22 +1,34 @@
+import Header from "./Header";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./Secondarycontainer";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useTopRatedMovies from "../hooks/useTopRatedMovies";
+import useUpComingMovies from "../hooks/useUpComingMovies";
+import GptSearchPage from "./GptSearchPage";
+import { useSelector } from "react-redux";
 
-import Header from "./Header"
-import useNowPlayingMovies from "../hooks/useNowPlayingMovies"
-import MainContainer from "./MainContainer"
-import SecondaryContainer from "./Secondarycontainer"
-
-const  Browse = ()=>{
-// CUSTOMHOOK FOR FETCHING THE API 
-useNowPlayingMovies()
-    return (
+const Browse = () => {
+  const showGptSearchView = useSelector((store) => store.gpt.showGptSearch);
+  // CUSTOMHOOK FOR FETCHING THE API
+  useNowPlayingMovies();
+  usePopularMovies();
+  useTopRatedMovies();
+  useUpComingMovies();
+  return (
+    <>
+      <Header />
+      {showGptSearchView ?  (
         <div>
-         <Header/>
-         <div>
-         <MainContainer/>
-         <SecondaryContainer/>
-         </div>
-        
-        
+          <GptSearchPage />
         </div>
-    )
-}
-export default Browse
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
+    </>
+  );
+};
+export default Browse;
