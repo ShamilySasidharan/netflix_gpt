@@ -1,9 +1,10 @@
 import { API_OPTION } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTrailerOfTheMovie } from "../utils/movieSlice";
 import { useEffect } from "react";
 const useMovieTrailer = (movieID) => {
   const dispatch = useDispatch();
+  const trailerOFTheMovie = useSelector((store)=>store.movie.trailerOFTheMovie)
   const getAllMovieVideos = async () => {
     // PASS THE  movieID SO THAT IT WILL BECOME DYNAMIC
     const promise = await fetch(
@@ -25,7 +26,9 @@ const useMovieTrailer = (movieID) => {
     dispatch(addTrailerOfTheMovie(trailer));
   };
   useEffect(() => {
-    getAllMovieVideos();
+    // ADDED MEMOIZATION HERE TO PREVENT THE UNNECESSARY API CALLS WHEN THE DATA IA ALREADY PRESENT IN THE STORE
+    // IF IT IS NULL MAKE THE API CALL OTHERWISE NOT
+    !trailerOFTheMovie && getAllMovieVideos();
   }, []);
 
   return <div></div>;

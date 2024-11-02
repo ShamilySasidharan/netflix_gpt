@@ -29,10 +29,12 @@ const Header = () => {
   };
 
   const langOptionSelector  = useSelector((store)=>store.languageConfig.showSelectorOption)
+ 
 
   const handleGPTSearch =()=>{
     dispatch(toggleGptSearchView())
     dispatch(showTheLanguageSelector())
+    
     
   }
 
@@ -71,35 +73,36 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="bg-black w-full z-10 flex justify-between align-middle absolute">
-      <div className="w-full flex justify-between">
-      <img className="w-44 py-4 mx-10" src={LOGO} alt="logo_netflix" />
+    <div className="bg-black w-full z-10 flex  justify-between absolute">
+      <div className="w-full flex flex-col  md:flex-row justify-between">
+      <img className="w-44 py-4 mx-auto  md:mx-0" src={LOGO} alt="logo_netflix" />
       {/* WHEN I HAVE USER LOAD THIS  */}
       {userPhoto && (
-        <div className="flex py-5 gap-2 pr-10">
+        <div className="flex flex-col md:flex-row md:py-5 text-center gap-2 md:pr-10 pb-10 ">
          
-
-         <button className="text-red-700 text-xl font-bold text-center 
-          px-2 no-underline  hover:text-red-500" onClick={handleGPTSearch}>
+         <button className="text-red-700 md:text-xl font-bold text-center 
+          md:px-2 no-underline  hover:text-red-500  " onClick={handleGPTSearch}>
            {langOptionSelector ? "Home" : "GPTSearch"} 
           </button>
 
-          {langOptionSelector &&  <div className="mt-3">
-          <select  id="underline_select" className=" cursor-pointer p-1.5 w-full text-xl font-bold rounded-sm bg-transparent hover:text-red-500 text-red-700   focus:outline-none focus:ring-0 " onChange={handleLanguageChange}>
+
+
+          {langOptionSelector &&  <div className="md:mt-3  mx-28 md:mx-0 justify-between text-center md:bg-black rounded-md border border-red-800 md:border-none">
+          <select  id="underline_select" className="  cursor-pointer p-1.5  w-full md:text-xl font-semibold md:font-bold rounded-sm bg-transparent hover:text-red-500 text-red-700   focus:outline-none focus:ring-0 " onChange={handleLanguageChange}>
             {SUPPORTED_LANGUAGES.map((lang)=><option key ={lang.id} value={lang.id} className=" text-netflix_red text-sm">{lang.name}</option>)}
            </select>
           </div>}
          
-           
+          
          
           <img
-            className="w-12 h-12 rounded-md"
+            className=" hidden md:block md:w-12 md:h-12 md:rounded-md "
             src={userPhoto.photoURL}
             alt="userIcon"
           />
 
           <button
-            className="text-white font-bold text-center px-2 cursor-pointer"
+            className="text-sm m-auto text-white md:text-lg md:font-bold md:text-center md:px-2 cursor-pointer"
             onClick={handleSignOut}
           >
             Sign out

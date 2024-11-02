@@ -34,6 +34,22 @@
    - gpt search feature 
    - created a select options for language specification only for Gpt search page 
       created a separate slice for the langauge, added the action and dispatched the action on gpt search click and subscribed to header with conditional rendering
+   - shows the gpt multilingual option only in the gpt search page
+   - integrate the open ai api (purchased)
+   - created the querey and fetch the movie
+   - matched with the TMDB and fetch results
+   - resolved the promises and got the result
+   - adding the gpt movie results and tmdb results into the gpt slice
+   -added a clearMovies in gpt slice to remove the movie when user goes to another page (happen becacuse the reducx, store data and will 
+        be persistent in the store so even after goes to another page and coming back to the gptSearch page the  data of the previous search will be there)
+   - added .env file to store the OPENAI_KEY and TMDB KEY 
+         adding the .env file is very important to secure the sensitive information
+   - add REACT_APP_ infront of the key
+        - mandatory to add REACT_APP_OPENAI_KEY /REACT_APP_TMDB_KEY in front of all the key [a way to tell the react that this is sensitive information handle with care]
+       - faced issues while setting the key in console got many error message for tmdb api key resolved by using the   Authorization: `Bearer ${process.env.REACT_APP_TMDB_KEY}`,in the constant file
+    - done memoization 
+    - done the responsive design for the sm and desktop (for tab still there is to do)
+
 # Features
 
 - login/signup page 

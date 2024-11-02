@@ -1,6 +1,7 @@
 import { MOVIE_CARD_CDN_URL } from "../utils/constants";
 
 const MovieCards = ({ posterPath }) => {
+  if(!posterPath) return null
   return (
     <div className="w-48 pr-5 mb-12">
       <img

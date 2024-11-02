@@ -5,9 +5,9 @@ const VideoBackground = ({ movieID }) => {
   const trailerVideo = useSelector((store) => store.movie?.trailerOFTheMovie);
   useMovieTrailer(movieID)
   return (
-    <div className="bg-slate-400">
+    <div className="bg-black pt-52 md:mt-0 md:pt-0 ">
       {/* USE CAMELCASE FOR THE PROPERY IFRAME COPIED FROM YOUTUBE>SHARE>EMBED*/}
-      <div className="w-full aspect-video bg-gradient-to-r from-background_T001 to-background_T002">
+      <div className="w-full aspect-video  bg-gradient-to-r from-background_T001 to-background_T002 ">
       <iframe
       className="w-full h-full"
         width="560"
